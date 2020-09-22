@@ -164,7 +164,7 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
 
 三、测试是否安装成功
 
-浏览器访问http://122.51.22.248:5601/app/kibana，显示如下即为启动成功。
+浏览器访问http://122.51.22.248:5601/app/kibana ，显示如下即为启动成功。
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/kibana.jpg)
 
@@ -195,15 +195,15 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
     在 logstash的主目录下，通过tcp从应用服务器中将日志打入122.51.22.248:9250端口，然后logstash会转发到es的端口9200
 	input {
 	  tcp {
- 	  mode => "server"
- 	  port => 9250
- 	 }
+		mode => "server"
+		port => 9250
+	 }
 	}
 	output {
- 	 elasticsearch {
- 	   hosts => ["http://122.51.22.248:9200"]
- 	   index => "applog"
- 	 }
+	  elasticsearch {
+		hosts => ["http://122.51.22.248:9200"]
+		index => "applog"
+	 }
 	}
 
 三、启动
@@ -253,15 +253,15 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/sp.jpg)
 
-访问日志平台http://122.51.22.248:5601/app/kibana，点击discover，找到我们前面创建的applog索引，可以看到日志数据已经能够正常刷新。
+访问日志平台http://122.51.22.248:5601/app/kibana ，点击discover，找到我们前面创建的applog索引，可以看到日志数据已经能够正常刷新。
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/ki1.jpg)
 
-我们在Serach中输入关键字东方财富，可以看到跟关键字相关的所有日志都已经被检索出来了。
+我们在Search中输入关键字东方财富，可以看到跟关键字相关的所有日志都已经被检索出来了。
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/ki2.jpg)
 
-至此，我们Spring Boot工程和ELK的集成已经完成，具体的工程代码可以访问https://github.com/data-lin/elk-consumer进行下载。
+至此，我们Spring Boot工程和ELK的集成已经完成，具体的工程代码可以访问https://github.com/data-lin/elk-consumer 进行下载。
 
 ## 6、总结 ##
 
