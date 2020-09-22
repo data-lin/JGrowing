@@ -63,7 +63,7 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
 
 二、 创建用户
 
-从5.0开始，ElasticSearch 安全级别提高了，不允许采用root帐号启动，这里我们新建一个用户data
+从5.0开始，ElasticSearch 安全级别提高了，不允许采用root帐号启动，这里我们新建一个用户data。
 
 	1.创建elk用户组
 	  groupadd elk
@@ -128,7 +128,7 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/escurl.png)
 
-我们创建一个索引applog，为后面的章节做准备。
+六、我们创建一个索引applog，为后面的章节做准备。
 
     创建索引
     curl -XPUT http://122.51.22.248:9200/applog
@@ -229,11 +229,11 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
             <version>6.4</version>
         </dependency>
 
-在resources目录下，我们新增日志配置文件logback.xml，通过以下代码指定日志的输出端口：
+三、在resources目录下，我们新增日志配置文件logback.xml，通过以下代码指定日志的输出端口：
 
 		<destination>122.51.22.248:9250</destination>
 
-新建一个Controller类ELKController，具体代码如下：
+四、新建一个Controller类ELKController，具体代码如下：
 
 	@RestController
 	public class ELKController {
@@ -249,7 +249,7 @@ ELK是三个开源软件的缩写，分别表示：Elasticsearch , Logstash, Kib
     	}
 	}
 
-启动工程，我们访问list接口，可以看到浏览器能够正常收到返回的数据。
+五、启动工程，我们访问list接口，可以看到浏览器能够正常收到返回的数据。
 
 ![](http://qgzyfhov6.hn-bkt.clouddn.com/sp.jpg)
 
